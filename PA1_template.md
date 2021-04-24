@@ -6,7 +6,7 @@ output:
 
 Reproducible Research - Course Project 1
 ==========================================
-\
+
 
 #### **1. Code for reading in the dataset and/or processing the data**
 
@@ -41,7 +41,7 @@ str(data)
 ##  $ interval: int  0 5 10 15 20 25 30 35 40 45 ...
 ```
 
-\
+
 
 #### **2. Histogram of the total number of steps taken each day**
 
@@ -53,7 +53,7 @@ data %>% group_by(date) %>% summarize(steps = sum(steps, na.rm = T)) %>% ggplot(
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
-\
+
 
 ### **3. Mean and median number of steps taken each day**
 
@@ -74,7 +74,7 @@ data %>% group_by(date) %>% summarize(total_steps = sum(steps, na.rm = T)) %>% s
 ## 1      9354.        10395
 ```
 
-\
+
 
 ### **4. Time series plot of the average number of steps taken**
 
@@ -91,7 +91,7 @@ data %>% group_by(interval) %>% summarize(steps = mean(steps, na.rm = T)) %>% gg
 
 ![](PA1_template_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
 
-\
+
 
 ### **4. The 5-minute interval that, on average, contains the maximum number of steps**
 
@@ -111,7 +111,7 @@ data %>% group_by(interval) %>% summarize(mean_steps = mean(steps, na.rm = T)) %
 ## 1      835       206.
 ```
 
-\
+
 
 ### **5. Code to describe and show a strategy for imputing missing data**
 
@@ -204,7 +204,7 @@ sum(is.na(data$steps))
 ## [1] 0
 ```
 
-\
+
 
 ### **6. Histogram of the total number of steps taken each day after missing values are imputed**
 
@@ -219,7 +219,7 @@ data %>% group_by(date) %>% summarize(steps = sum(steps)) %>% ggplot(aes(x = ste
 
 ![](PA1_template_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
 
-\
+
 
 ### **7. Panel plot comparing the average number of steps taken per 5-minute interval across weekdays and weekends**
 

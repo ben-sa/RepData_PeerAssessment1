@@ -6,7 +6,7 @@ output:
 
 Reproducible Research - Course Project 1
 ==========================================
-\
+
 
 #### **1. Code for reading in the dataset and/or processing the data**
 
@@ -31,7 +31,7 @@ The data is now prepared to answer the first questions of the assigment, as a qu
 str(data)
 ```
 
-\
+
 
 #### **2. Histogram of the total number of steps taken each day**
 
@@ -40,7 +40,7 @@ Using dplyr and ggplot, I grouped the data by date, summarized the steps for eac
 ```{r}
 data %>% group_by(date) %>% summarize(steps = sum(steps, na.rm = T)) %>% ggplot(aes(x = steps)) + geom_histogram(bins = 5, color = "white")
 ```
-\
+
 
 ### **3. Mean and median number of steps taken each day**
 
@@ -53,7 +53,7 @@ Since the goal is to have just two single numbers (mean steps per day, median st
 data %>% group_by(date) %>% summarize(total_steps = sum(steps, na.rm = T)) %>% summarize(mean_steps = mean(total_steps), median_steps = median(total_steps))
 ```
 
-\
+
 
 ### **4. Time series plot of the average number of steps taken**
 
@@ -67,7 +67,7 @@ The result shows that there is nearly no activity between 0 and 5 o´clock (whic
 data %>% group_by(interval) %>% summarize(steps = mean(steps, na.rm = T)) %>% ggplot(aes(x = interval, y = steps)) + geom_line()
 ```
 
-\
+
 
 ### **4. The 5-minute interval that, on average, contains the maximum number of steps**
 
@@ -79,7 +79,7 @@ Finally I rearranged the data in descending order to show the highest value of m
 data %>% group_by(interval) %>% summarize(mean_steps = mean(steps, na.rm = T)) %>% arrange(desc(mean_steps)) %>% head(1)
 ```
 
-\
+
 
 ### **5. Code to describe and show a strategy for imputing missing data**
 
@@ -123,7 +123,7 @@ head(data)
 sum(is.na(data$steps))
 ```
 
-\
+
 
 ### **6. Histogram of the total number of steps taken each day after missing values are imputed**
 
@@ -135,7 +135,7 @@ The histogram looks slightly different from the one in question 2, with a distri
 data %>% group_by(date) %>% summarize(steps = sum(steps)) %>% ggplot(aes(x = steps)) + geom_histogram(bins = 5, color = "white")
 ```
 
-\
+
 
 ### **7. Panel plot comparing the average number of steps taken per 5-minute interval across weekdays and weekends**
 
