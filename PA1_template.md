@@ -11,7 +11,6 @@ knitr::opts_chunk$set(fig.path='Figs/')
 Reproducible Research - Course Project 1
 ==========================================
 \
-\
 
 #### **1. Code for reading in the dataset and/or processing the data**
 
