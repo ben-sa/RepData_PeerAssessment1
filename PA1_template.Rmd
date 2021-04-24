@@ -3,9 +3,6 @@ output:
   html_document: 
     keep_md: yes
 ---
-```{r global_options}
-knitr::opts_chunk$set(fig.path='Figs/')
-```
 
 Reproducible Research - Course Project 1
 ==========================================
