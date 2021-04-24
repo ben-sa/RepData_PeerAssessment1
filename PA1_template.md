@@ -1,9 +1,3 @@
----
-output: 
-  html_document:
-    keep_md: true
----
-
 Reproducible Research - Course Project 1
 ==========================================
 \
@@ -53,7 +47,7 @@ Using dplyr and ggplot, I grouped the data by date, summarized the steps for eac
 data %>% group_by(date) %>% summarize(steps = sum(steps, na.rm = T)) %>% ggplot(aes(x = steps)) + geom_histogram(bins = 5, color = "white")
 ```
 
-![](Course_project1_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png)
 \
 
 ### **3. Mean and median number of steps taken each day**
@@ -90,7 +84,7 @@ The result shows that there is nearly no activity between 0 and 5 o´clock (whic
 data %>% group_by(interval) %>% summarize(steps = mean(steps, na.rm = T)) %>% ggplot(aes(x = interval, y = steps)) + geom_line()
 ```
 
-![](Course_project1_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
+![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png)
 
 \
 
@@ -218,7 +212,7 @@ The histogram looks slightly different from the one in question 2, with a distri
 data %>% group_by(date) %>% summarize(steps = sum(steps)) %>% ggplot(aes(x = steps)) + geom_histogram(bins = 5, color = "white")
 ```
 
-![](Course_project1_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
+![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12-1.png)
 
 \
 
@@ -237,4 +231,4 @@ data <- data %>% mutate(Day_Week = ifelse(weekdays(date) == "Saturday" | weekday
 data %>% group_by(interval, Day_Week) %>% summarize(steps = mean(steps)) %>% ggplot(aes(x = interval, y = steps, color = Day_Week)) + geom_line() + facet_grid(cols = vars(Day_Week))
 ```
 
-![](Course_project1_files/figure-html/unnamed-chunk-13-1.png)<!-- -->
+![plot of chunk unnamed-chunk-13](figure/unnamed-chunk-13-1.png)
